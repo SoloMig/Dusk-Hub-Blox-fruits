@@ -2477,7 +2477,7 @@ DiscordServerParagraph1 = Tabs.InfoTab:Paragraph({
     Buttons = {{
         Title = "Copy Social",
         Callback = function()
-            setclipboard("not right now");
+            setclipboard("https://github.com/SoloMig/Dusk-Hub-Blox-fruits");
             WindUI:Notify({
                 Title = "Notication",
                 Content = "Social Link Copied",
