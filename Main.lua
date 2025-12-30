@@ -1,5 +1,5 @@
 # Dusk-Hub-Blox-fruits
-The official script for Dusk Hub.
+The official script for Dusk Hub.(:
 ---------------------------------------
 
 if not game:IsLoaded() then
