@@ -24,7 +24,7 @@ end
 local WindUI = (loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua")))();
 local Window = WindUI:CreateWindow({
     Title = "Dusk Hub",
-    Icon = "rbxassetid://84228153855933",
+    Icon = "rbxassetid://99879167698967",
     Author = "Dusk Hub | Blox Fruit",
     Folder = "Dusk Hub_BF",
     Size = UDim2.fromOffset(550, 300),
@@ -391,18 +391,18 @@ _G.Settings = {
 };
 (getgenv()).Load = function()
     if readfile and writefile and isfile and isfolder then
-        if not isfolder("Relz Hub New") then
-            makefolder("Relz Hub New");
+        if not isfolder("Dusk Hub") then
+            makefolder("Dusk Hub");
         end
-        if not isfolder("Relz Hub New/Blox Fruits/") then
-            makefolder("Relz Hub New/Blox Fruits/");
+        if not isfolder("Dusk Hub/Blox Fruits/") then
+            makefolder("Dusk Hub/Blox Fruits/");
         end
-        if not isfile(("Relz Hub New/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json")) then
-            writefile("Relz Hub New/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json",
+        if not isfile(("Dusk Hub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json")) then
+            writefile("Dusk Hub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json",
                 (game:GetService("HttpService")):JSONEncode(_G.Settings));
         else
             local Decode = (game:GetService("HttpService")):JSONDecode(readfile(
-                "Relz Hub New/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"));
+                "Dusk Hub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"));
             for i, v in pairs(Decode) do
                 _G.Settings[i] = v;
             end
@@ -414,16 +414,16 @@ _G.Settings = {
 end;
 (getgenv()).SaveSetting = function()
     if readfile and writefile and isfile and isfolder then
-        if not isfile(("Relz Hub New/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json")) then
+        if not isfile(("Dusk Hub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json")) then
             (getgenv()).Load();
         else
             local Decode = (game:GetService("HttpService")):JSONDecode(readfile(
-                "Relz Hub New/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"));
+                "Dusk Hub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"));
             local Array = {};
             for i, v in pairs(_G.Settings) do
                 Array[i] = v;
             end
-            writefile("Relz Hub New/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json",
+            writefile("Dusk Hub/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json",
                 (game:GetService("HttpService")):JSONEncode(Array));
         end
     else
