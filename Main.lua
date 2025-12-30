@@ -1165,7 +1165,7 @@ function CheckQuest()
 end
 function Hop()
     local module = (loadstring(game:HttpGet(
-        "https://raw.githubusercontent.com/raw-scriptpastebin/FE/main/Server_Hop_Settings")))();
+        "https://raw.githubusercontent.com/SoloMig/Server_Hop_Settings/refs/heads/main/ServerHop.lua")))();
     module:Teleport(game.PlaceId);
 end
 function isnil(thing)
