@@ -5,7 +5,7 @@ end
 if setfpscap then
     setfpscap(1000000)
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Vylera Hub",
+        Title = "Dusk Hub",
         Text = "FPS Unlocked!",
         Duration = 5,
         Button1 = "Okay"
@@ -13,7 +13,7 @@ if setfpscap then
     warn("FPS Unlocked!")
 else
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Vylera Hub",
+        Title = "Dusk Hub",
         Text = "Your exploit does not support setfpscap.",
         Duration = 5,
         Button1 = "Okay"
@@ -23,10 +23,10 @@ end
 
 local WindUI = (loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua")))();
 local Window = WindUI:CreateWindow({
-    Title = "Vylera Hub",
+    Title = "Dusk Hub",
     Icon = "rbxassetid://84228153855933",
-    Author = "Vylera Hub | Blox Fruit",
-    Folder = "Vylera Hub_BF",
+    Author = "Dusk Hub | Blox Fruit",
+    Folder = "Dusk Hub_BF",
     Size = UDim2.fromOffset(550, 300),
     Transparent = true,
     Theme = "Dark",
@@ -40,7 +40,7 @@ local Window = WindUI:CreateWindow({
     },
 });
 Window:EditOpenButton({
-    Title = "Vylera Hub - Open",
+    Title = "Dusk Hub - Open",
     Icon = "monitor",
     CornerRadius = UDim.new(0, 6),
     StrokeThickness = 2,
@@ -2449,40 +2449,7 @@ spawn(function()
         end);
     end
 end);
-DiscordServerParagraph = Tabs.InfoTab:Paragraph({
-    Title = "Discord Server",
-    Desc = "Link Discord Vylera Hub!",
-    TextXAlignment = "Left",
-    Buttons = {{
-        Title = "Copy Link Discord",
-        Callback = function()
-            setclipboard("not right now");
-            WindUI:Notify({
-                Title = "Notication",
-                Content = "Discord Link Copied",
-                Icon = "bell",
-                Duration = 3
-            });
-        end
-    }}
-});
-DiscordServerParagraph1 = Tabs.InfoTab:Paragraph({
-    Title = "Social Vylera Hub",
-    Desc = "Link Social Vylera Hub!",
-    TextXAlignment = "Left",
-    Buttons = {{
-        Title = "Copy Social",
-        Callback = function()
-            setclipboard("not right now");
-            WindUI:Notify({
-                Title = "Notication",
-                Content = "Social Link Copied",
-                Icon = "bell",
-                Duration = 3
-            });
-        end
-    }}
-});
+
 LevelFarmSection = Tabs.MainTab:Section({
     Title = "Level Farm",
     TextXAlignment = "Left"
@@ -10370,7 +10337,7 @@ FpsBoostButton = Tabs.MiscTab:Button({
     end
 });
 FpsBoostButton = Tabs.MiscTab:Button({
-    Title = "Fps Boost (Vylera Hub)",
+    Title = "Fps Boost (Dusk Hub)",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/dyumra/DYHUB-Universal-Game/refs/heads/main/Nigga.lua"))()
     end
@@ -10644,7 +10611,7 @@ local Data = {
             ["inline"] = false
         }, {
             ["name"] = "Thank You Everyone",
-            ["value"] = "Used Script By Vylera Hub",
+            ["value"] = "Used Script By Dusk Hub",
             ["inline"] = false
         }}
     }}
@@ -10656,7 +10623,7 @@ local Headers = {
 local Encoded = HttpService:JSONEncode(Data)
 
 local WebhookURL =
-    "https://discord.com/api/webhooks/1361944409662423180/cliAsM5X1dqSTEBoz_yO5gsirtWfm7dNAAE89mnHbiu0Lww2-ISxYaWWBLsXexauGM6-"
+    "https://discord.com/api/webhooks/1455622315340468254/KKaXqUrhJ7LfgjVYTUQ3iNwn4TUrBljo9fZE-bT34Ca4t-pX2C6TVJokRNbpovDGG4Z4"
 local Request = http_request or request or HttpPost or syn.request
 if Request then
     Request({
