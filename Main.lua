@@ -2456,8 +2456,7 @@ spawn(function()
     end
 end);
 
-- Dusk Hub Discord Section
-DuskDiscordParagraph = Tabs.InfoTab:Paragraph({
+DiscordServerParagraph = Tabs.InfoTab:Paragraph({
     Title = "Discord Server",
     Desc = "Link Discord Dusk Hub!",
     TextXAlignment = "Left",
@@ -2466,8 +2465,25 @@ DuskDiscordParagraph = Tabs.InfoTab:Paragraph({
         Callback = function()
             setclipboard("https://discord.gg/sS6C2eFrDg");
             WindUI:Notify({
-                Title = "Dusk Hub",
+                Title = "Notication",
                 Content = "Discord Link Copied",
+                Icon = "bell",
+                Duration = 3
+            });
+        end
+    }}
+});
+DiscordServerParagraph1 = Tabs.InfoTab:Paragraph({
+    Title = "Social Dusk Hub - empty",
+    Desc = "Link Social Dusk Hub!",
+    TextXAlignment = "Left",
+    Buttons = {{
+        Title = "Copy Social",
+        Callback = function()
+            setclipboard("empty");
+            WindUI:Notify({
+                Title = "Notication",
+                Content = "Social Link Copied",
                 Icon = "bell",
                 Duration = 3
             });
