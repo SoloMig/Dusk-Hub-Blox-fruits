@@ -2,6 +2,7 @@ if not game:IsLoaded() then
     repeat task.wait() until game:IsLoaded()
 end
 
+-- FPS Unlocker
 if setfpscap then
     setfpscap(1000000)
     game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -10,18 +11,13 @@ if setfpscap then
         Duration = 5,
         Button1 = "Okay"
     })
-    warn("FPS Unlocked!")
 else
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Dusk Hub",
-        Text = "Your exploit does not support setfpscap.",
-        Duration = 5,
-        Button1 = "Okay"
-    })
     warn("Your exploit does not support setfpscap.")
 end
 
-local WindUI = (loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua")))();
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+
+-- Janela Principal
 local Window = WindUI:CreateWindow({
     Title = "Dusk Hub",
     Icon = "rbxassetid://99879167698967",
@@ -37,16 +33,25 @@ local Window = WindUI:CreateWindow({
     User = {
         Enabled = true,
         Anonymous = false
-    },
-});
+    }
+})
+
+-- Correção de Cores (Ciano Neon e Fundo Dusk)
+Window:EditTheme({
+    Accent = Color3.fromRGB(0, 255, 255),
+    Background = Color3.fromRGB(15, 10, 25),
+    Text = Color3.fromRGB(255, 255, 255)
+})
+
+-- Botão de Abrir
 Window:EditOpenButton({
     Title = "Dusk Hub - Open",
     Icon = "monitor",
     CornerRadius = UDim.new(0, 6),
     StrokeThickness = 2,
-    Color = ColorSequence.new(Color3.fromRGB(30, 30, 30), Color3.fromRGB(255, 255, 255)),
+    Color = ColorSequence.new(Color3.fromRGB(0, 255, 255), Color3.fromRGB(15, 10, 25)),
     Draggable = true
-});
+})
 local Tabs = {
     InfoTab = Window:Tab({
         Title = "Information",
