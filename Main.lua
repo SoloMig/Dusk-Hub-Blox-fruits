@@ -24,7 +24,7 @@ end
 local WindUI = (loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua")))();
 local Window = WindUI:CreateWindow({
     Title = "Dusk Hub",
-    Icon = "rbxassetid://91478007929502",
+    Icon = "Moon",
     Author = "Dusk Hub | Blox Fruit",
     Folder = "Dusk Hub_BF",
     Size = UDim2.fromOffset(550, 300),
@@ -175,6 +175,7 @@ Tabs.InfoTab:Section({ Title = "Redes Sociais" })
 Tabs.InfoTab:Button({
     Title = "Copiar Link do Discord",
     Desc = "Junte-se a meu servidor!",
+    Icon = "Moon"
     Callback = function()
         setclipboard("https://discord.gg/sS6C2eFrDg")
         WindUI:Notify({
