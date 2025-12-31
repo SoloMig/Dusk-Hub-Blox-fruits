@@ -39,6 +39,14 @@ local Window = WindUI:CreateWindow({
         Anonymous = false
     },
 });
+
+Window:EditTheme({
+    Accent = Color3.fromRGB(15, 15, 15),     -- PRETO (Cor das bordas e detalhes)
+    Background = Color3.fromRGB(45, 25, 80),  -- ROXO (Cor principal do fundo)
+    Text = Color3.fromRGB(240, 240, 240)     -- BRANCO GELO (Letras legíveis)
+})
+
+
 Window:EditOpenButton({
     Title = "Dusk Hub - Open",
     Icon = "monitor",
