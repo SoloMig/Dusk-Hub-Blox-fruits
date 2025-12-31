@@ -24,7 +24,7 @@ end
 local WindUI = (loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua")))();
 local Window = WindUI:CreateWindow({
     Title = "Dusk Hub",
-    Icon = "rbxassetid://91478007929502",
+    Icon = "Moon",
     Author = "Dusk Hub | Blox Fruit",
     Folder = "Dusk Hub_BF",
     Size = UDim2.fromOffset(550, 300),
@@ -39,6 +39,29 @@ local Window = WindUI:CreateWindow({
         Anonymous = false
     },
 });
+
+-- PARTE QUE FORÇA A IMAGEM NO TÍTULO
+task.spawn(function()
+    local coreGui = game:GetService("CoreGui")
+    -- Espera a interface existir por até 15 segundos
+    local gui = coreGui:WaitForChild("WindUI", 15)
+    
+    if gui then
+        -- Vasculha tudo dentro da UI para achar o ícone do título
+        for _, obj in pairs(gui:GetDescendants()) do
+            -- Se for uma imagem e o nome for "Icon"
+            if obj:IsA("ImageLabel") and obj.Name == "Icon" then
+                -- Verifica se ela está na barra de cima (TopBar)
+                if obj:FindFirstAncestor("TopBar") or obj:FindFirstAncestor("Title") then
+                    obj.Image = "rbxassetid://84228153855933" -- Seu ID do Dusk Hub
+                    obj.ImageColor3 = Color3.fromRGB(255, 255, 255) -- Cor normal da foto
+                    obj.ScaleType = Enum.ScaleType.Fit -- Faz a foto caber certinho
+                end
+            end
+        end
+    end
+end)
+
 Window:EditOpenButton({
     Title = "", -- Vazio para o círculo ficar perfeito
     Icon = "moon", -- Ícone da lua (padrão e estável)
