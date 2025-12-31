@@ -161,6 +161,17 @@ local Tabs = {
         Desc = "Server Section"
     })
 };
+
+-- ABA DE CRÉDITOS E AGRADECIMENTO
+Tabs.InfoTab:Section({ Title = "— Dusk Hub Credits —" })
+
+Tabs.InfoTab:Paragraph({
+    Title = "Obrigado por usar o Dusk Hub!",
+    Desc = ".\n\nDesenvolvedor: Dusk\nVersão: 1.0 (Stable)",
+    Image = "rbxassetid://91478007929502", -- Seu Logo
+    ImageSize = 100 -- Deixando a imagem maior como você pediu
+})
+
 Window:SelectTab(1);
 _G.Settings = {
     Main = {
