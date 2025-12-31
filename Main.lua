@@ -24,7 +24,7 @@ end
 local WindUI = (loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua")))();
 local Window = WindUI:CreateWindow({
     Title = "Dusk Hub",
-    Icon = "rbxassetid://84228153855933",
+    Icon = "rbxassetid://91478007929502",
     Author = "Dusk Hub | Blox Fruit",
     Folder = "Dusk Hub_BF",
     Size = UDim2.fromOffset(550, 300),
@@ -40,18 +40,12 @@ local Window = WindUI:CreateWindow({
     },
 });
 Window:EditOpenButton({
-    Title = "", 
-    Icon = "moon",
-    CornerRadius = UDim.new(1, 0), -- Círculo
+    Title = "Dusk Hub - Open",
+    Icon = "Moon",
+    CornerRadius = UDim.new(0, 6),
     StrokeThickness = 2,
-    Color = ColorSequence.new({
-        ColorSequenceKeypoint.new(0, Color3.fromRGB(45, 0, 90)),   -- Roxo Escuro
-        ColorSequenceKeypoint.new(0.5, Color3.fromRGB(15, 15, 15)), -- Preto
-        ColorSequenceKeypoint.new(1, Color3.fromRGB(200, 200, 200)) -- Branco/Cinza
-    }),
-    Draggable = true,
-    Keybind = Window.Keybind
-        
+    Color = ColorSequence.new(Color3.fromRGB(30, 30, 30), Color3.fromRGB(255, 255, 255)),
+    Draggable = true
 });
 local Tabs = {
     InfoTab = Window:Tab({
@@ -161,18 +155,6 @@ local Tabs = {
         Desc = "Server Section"
     })
 };
-
-Tabs.SettingsTab:Section({ Title = "Interface Settings" })
-
-Tabs.SettingsTab:Keybind({
-    Title = "Toggle UI Visibility",
-    Desc = "Aperte Right Shift para abrir/fechar",
-    Default = Enum.KeyCode.RightShift, -- Definido para o Shift da direita
-    Callback = function()
-        Window:Toggle() -- Abre ou fecha a janela
-    end
-})
-
 Window:SelectTab(1);
 _G.Settings = {
     Main = {
