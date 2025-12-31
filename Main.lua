@@ -2456,6 +2456,25 @@ spawn(function()
     end
 end);
 
+- Dusk Hub Discord Section
+DuskDiscordParagraph = Tabs.InfoTab:Paragraph({
+    Title = "Discord Server",
+    Desc = "Link Discord Dusk Hub!",
+    TextXAlignment = "Left",
+    Buttons = {{
+        Title = "Copy Link Discord",
+        Callback = function()
+            setclipboard("https://discord.gg/sS6C2eFrDg");
+            WindUI:Notify({
+                Title = "Dusk Hub",
+                Content = "Discord Link Copied",
+                Icon = "bell",
+                Duration = 3
+            });
+        end
+    }}
+});
+
 LevelFarmSection = Tabs.MainTab:Section({
     Title = "Level Farm",
     TextXAlignment = "Left"
