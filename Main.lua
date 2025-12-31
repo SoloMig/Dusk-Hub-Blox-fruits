@@ -45,7 +45,7 @@ Window:EditOpenButton({
     CornerRadius = UDim.new(1, 0), -- Círculo 100%
     StrokeThickness = 2,
     Color = ColorSequence.new({
-        ColorSequenceKeypoint.new(0, Color3.fromRGB(45, 0, 90)),   -- Roxo Escuro
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(90, 20, 180)),   -- Roxo Escuro
         ColorSequenceKeypoint.new(0.5, Color3.fromRGB(15, 15, 15)), -- Preto
         ColorSequenceKeypoint.new(1, Color3.fromRGB(200, 200, 200)) -- Branco/Cinza
     }),
