@@ -161,6 +161,33 @@ local Tabs = {
         Desc = "Server Section"
     })
 };
+
+Tabs.InfoTab:Section({ Title = "— Dusk Hub Credits —" })
+
+-- O Banner é o jeito 100% oficial da WindUI mostrar logos grandes
+Tabs.InfoTab:Paragraph({
+    Title = "Obrigado por usar o Dusk Hub!",
+    Desc = "Desenvolvedor: Dusk | Versão: 1.0",
+})
+
+Tabs.InfoTab:Section({ Title = "Redes Sociais" })
+
+Tabs.InfoTab:Button({
+    Title = "Copiar Link do Discord",
+    Desc = "Junte-se a meu servidor!",
+    Callback = function()
+        setclipboard("https://discord.gg/sS6C2eFrDg")
+        WindUI:Notify({
+            Title = "Dusk Hub",
+            Content = "Link copiado!",
+            Duration = 5
+        })
+    end
+})
+
+-- Garante que o menu abra nesta aba
+Window:SelectTab(1);
+
 Window:SelectTab(1);
 _G.Settings = {
     Main = {
