@@ -40,8 +40,8 @@ local Window = WindUI:CreateWindow({
     },
 });
 Window:EditOpenButton({
-    Title = "Dusk Hub - Open",
-    Icon = "monitor",
+    Title = "open-Dusk Hub",
+    Icon = "moon",
     CornerRadius = UDim.new(0, 6),
     StrokeThickness = 2,
     Color = ColorSequence.new(Color3.fromRGB(30, 30, 30), Color3.fromRGB(255, 255, 255)),
@@ -155,6 +155,18 @@ local Tabs = {
         Desc = "Server Section"
     })
 };
+
+Tabs.SettingsTab:Section({ Title = "Interface Settings" })
+
+Tabs.SettingsTab:Keybind({
+    Title = "Toggle UI Visibility",
+    Desc = "Aperte Right Shift para abrir/fechar",
+    Default = Enum.KeyCode.RightShift, -- Definido para o Shift da direita
+    Callback = function()
+        Window:Toggle() -- Abre ou fecha a janela
+    end
+})
+
 Window:SelectTab(1);
 _G.Settings = {
     Main = {
