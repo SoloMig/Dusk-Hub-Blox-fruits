@@ -162,26 +162,26 @@ local Tabs = {
     })
 };
 
--- ABA DE CRÉDITOS E AGRADECIMENTO
 Tabs.InfoTab:Section({ Title = "— Dusk Hub Credits —" })
 
-Tabs.InfoTab:Paragraph({
+-- O Banner é o jeito 100% oficial da WindUI mostrar logos grandes
+Tabs.InfoTab:Banner({
     Title = "Obrigado por usar o Dusk Hub!",
-    Desc = ".\n\nDesenvolvedor: Dusk\nVersão: 1.0 (Stable)",
-    Image = "rbxassetid://15623055375", -- Seu Logo
-    ImageSize = 100 -- Deixando a imagem maior como você pediu
+    Desc = "Desenvolvedor: Dusk | Versão: 1.0",
+    Image = "rbxassetid://91478007929502", -- Seu ID original
+    Icon = "award" -- Um ícone pequeno opcional que fica no canto
 })
 
 Tabs.InfoTab:Section({ Title = "Redes Sociais" })
 
 Tabs.InfoTab:Button({
     Title = "Copiar Link do Discord",
-    Desc = "Junte-se a meu servidor!.",
+    Desc = "Junte-se a meu servidor!",
     Callback = function()
-        setclipboard("https://discord.gg/sS6C2eFrDg") -- Troque pelo seu link real
+        setclipboard("https://discord.gg/sS6C2eFrDg")
         WindUI:Notify({
             Title = "Dusk Hub",
-            Content = "Link copiado! Cole no seu navegador.",
+            Content = "Link copiado!",
             Duration = 5
         })
     end
