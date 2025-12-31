@@ -172,6 +172,21 @@ Tabs.InfoTab:Paragraph({
     ImageSize = 100 -- Deixando a imagem maior como você pediu
 })
 
+Tabs.InfoTab:Section({ Title = "Redes Sociais" })
+
+Tabs.InfoTab:Button({
+    Title = "Copiar Link do Discord",
+    Desc = "Junte-se a meu servidor!.",
+    Callback = function()
+        setclipboard("https://discord.gg/sS6C2eFrDg") -- Troque pelo seu link real
+        WindUI:Notify({
+            Title = "Dusk Hub",
+            Content = "Link copiado! Cole no seu navegador.",
+            Duration = 5
+        })
+    end
+})
+
 Window:SelectTab(1);
 _G.Settings = {
     Main = {
