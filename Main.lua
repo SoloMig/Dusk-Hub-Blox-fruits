@@ -40,12 +40,18 @@ local Window = WindUI:CreateWindow({
     },
 });
 Window:EditOpenButton({
-    Title = "Dusk Hub - Open",
-    Icon = "Moon",
-    CornerRadius = UDim.new(0, 6),
+    Title = "", -- Vazio para o círculo ficar perfeito
+    Icon = "moon", -- Ícone da lua (padrão e estável)
+    CornerRadius = UDim.new(1, 0), -- Círculo 100%
     StrokeThickness = 2,
-    Color = ColorSequence.new(Color3.fromRGB(30, 30, 30), Color3.fromRGB(255, 255, 255)),
-    Draggable = true
+    Color = ColorSequence.new({
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(45, 0, 90)),   -- Roxo Escuro
+        ColorSequenceKeypoint.new(0.5, Color3.fromRGB(15, 15, 15)), -- Preto
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(200, 200, 200)) -- Branco/Cinza
+    }),
+    Draggable = true,
+    Keybind = Window.Keybind -- Segue a tecla configurada (se mudar o SHIFT, ele muda junto)
+    
 });
 local Tabs = {
     InfoTab = Window:Tab({
