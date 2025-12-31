@@ -51,17 +51,6 @@ Window:EditOpenButton({
     }),
     Draggable = true,
     Keybind = Window.Keybind
-
-local coreGui = game:GetService("CoreGui")
-local openButton = coreGui:FindFirstChild("WindUI_OpenButton", true) -- Procura o botão da Wind
-
-if openButton then
-    local iconImage = openButton:FindFirstChildWhichIsA("ImageLabel", true)
-    if iconImage then
-        iconImage.Image = "rbxassetid://91478007929502" -- Coloque o seu ID aqui
-        iconImage.ImageColor3 = Color3.fromRGB(255, 255, 255) -- Mantém a cor original da foto
-    end
-end
         
 });
 local Tabs = {
