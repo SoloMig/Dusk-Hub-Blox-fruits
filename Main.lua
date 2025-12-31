@@ -24,7 +24,7 @@ end
 local WindUI = (loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua")))();
 local Window = WindUI:CreateWindow({
     Title = "Dusk Hub",
-    Icon = "Moon",
+    Icon = "rbxassetid://91478007929502",
     Author = "Dusk Hub | Blox Fruit",
     Folder = "Dusk Hub_BF",
     Size = UDim2.fromOffset(550, 300),
@@ -168,8 +168,7 @@ Tabs.InfoTab:Section({ Title = "— Dusk Hub Credits —" })
 Tabs.InfoTab:Banner({
     Title = "Obrigado por usar o Dusk Hub!",
     Desc = "Desenvolvedor: Dusk | Versão: 1.0",
-    Image = "rbxassetid://91478007929502", -- Seu ID original
-    Icon = "award" -- Um ícone pequeno opcional que fica no canto
+    Icon = "Moon" -- Um ícone pequeno opcional que fica no canto
 })
 
 Tabs.InfoTab:Section({ Title = "Redes Sociais" })
