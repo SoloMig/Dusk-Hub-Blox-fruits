@@ -168,7 +168,7 @@ Tabs.InfoTab:Section({ Title = "— Dusk Hub Credits —" })
 Tabs.InfoTab:Paragraph({
     Title = "Obrigado por usar o Dusk Hub!",
     Desc = ".\n\nDesenvolvedor: Dusk\nVersão: 1.0 (Stable)",
-    Image = "rbxassetid://91478007929502", -- Seu Logo
+    Image = "rbxassetid://15623055375", -- Seu Logo
     ImageSize = 100 -- Deixando a imagem maior como você pediu
 })
 
