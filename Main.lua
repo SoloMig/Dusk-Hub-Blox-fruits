@@ -1,101 +1,3 @@
--- // DUSK HUB | SPLASH SCREEN "PREMIUM" \\ --
--- // A melhor introdução para o seu script.
-
-local Players = game:GetService("Players")
-local TweenService = game:GetService("TweenService")
-local LocalPlayer = Players.LocalPlayer
-
--- // CONFIGURAÇÃO DA SPLASH (Pode mudar aqui)
-local DURATION_FADE_IN = 1.0 -- Tempo para a imagem aparecer
-local DURATION_HOLD = 2.5  -- Tempo que a imagem fica visível
-local DURATION_FADE_OUT = 1.0 -- Tempo para a imagem sumir
-local LOGO_ID = "rbxassetid://91478007929502" -- <--- SEU LOGO AQUI!
-local TEXT_SPLASH = "Dusk Hub: Iniciando Protocolos" -- Texto embaixo do logo
-local BLUR_EFFECT_ENABLED = true -- Deixa o fundo do jogo borrado? (true/false)
-
--- // Criando a GUI de Splash (Tela preta de fundo)
-local SplashGui = Instance.new("ScreenGui")
-SplashGui.Name = "DuskSplash_Screen"
-SplashGui.Parent = LocalPlayer:WaitForChild("PlayerGui") -- Garante que vai pro PlayerGui
-SplashGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-local BackgroundFrame = Instance.new("Frame")
-BackgroundFrame.Parent = SplashGui
-BackgroundFrame.Size = UDim2.new(1, 0, 1, 0)
-BackgroundFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-BackgroundFrame.BackgroundTransparency = 1.0 -- Começa transparente
-
--- // Sua Imagem Principal (Logo)
-local LogoImage = Instance.new("ImageLabel")
-LogoImage.Parent = BackgroundFrame
-LogoImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-LogoImage.BackgroundTransparency = 1.0
-LogoImage.Image = LOGO_ID
-LogoImage.Position = UDim2.new(0.5, -125, 0.5, -125) -- Centralizado
-LogoImage.Size = UDim2.new(0, 250, 0, 250)
-LogoImage.ImageTransparency = 1.0 -- Começa invisível
-
--- // Texto de Carregamento com Fonte Blox Fruits (Gotham Black)
-local LoadingText = Instance.new("TextLabel")
-LoadingText.Parent = BackgroundFrame
-LoadingText.Size = UDim2.new(1, 0, 0, 30)
-LoadingText.Position = UDim2.new(0, 0, 0.5, 140) -- Abaixo do logo
-LoadingText.BackgroundTransparency = 1.0
-LoadingText.TextScaled = true
-LoadingText.Text = TEXT_SPLASH
-LoadingText.Font = Enum.Font.GothamBlack -- FONTÃO DO BLOX FRUITS!
-LoadingText.TextColor3 = Color3.fromRGB(255, 255, 255)
-LoadingText.TextTransparency = 1.0 -- Começa invisível
-
--- // Borda para a Imagem (Deixa mais elegante)
-local UIStroke = Instance.new("UIStroke")
-UIStroke.Parent = LogoImage
-UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke.Color = Color3.fromRGB(50, 50, 50)
-UIStroke.Thickness = 2
-UIStroke.Transparency = 1.0 -- Começa invisível
-
--- // Efeito de Blur no Jogo (Opcional, para focar na Splash)
-local BlurEffect
-if BLUR_EFFECT_ENABLED then
-    BlurEffect = Instance.new("BlurEffect")
-    BlurEffect.Parent = game.Lighting
-    BlurEffect.Size = 0 -- Começa sem blur
-    TweenService:Create(BlurEffect, TweenInfo.new(DURATION_FADE_IN), {Size = 10}):Play()
-end
-
--- // ANIMAÇÕES "PREMIUM" \\ --
-
--- Animação de Fade In (Fundo e Logo aparecem suavemente)
-TweenService:Create(BackgroundFrame, TweenInfo.new(DURATION_FADE_IN), {BackgroundTransparency = 0}):Play()
-TweenService:Create(LogoImage, TweenInfo.new(DURATION_FADE_IN), {ImageTransparency = 0}):Play()
-TweenService:Create(LoadingText, TweenInfo.new(DURATION_FADE_IN), {TextTransparency = 0}):Play()
-TweenService:Create(UIStroke, TweenInfo.new(DURATION_FADE_IN), {Transparency = 0}):Play()
-
-wait(DURATION_FADE_IN + DURATION_HOLD) -- Espera aparecer e segurar na tela
-
--- Animação de Fade Out (Tudo some suavemente)
-TweenService:Create(LogoImage, TweenInfo.new(DURATION_FADE_OUT), {ImageTransparency = 1}):Play()
-TweenService:Create(LoadingText, TweenInfo.new(DURATION_FADE_OUT), {TextTransparency = 1}):Play()
-TweenService:Create(UIStroke, TweenInfo.new(DURATION_FADE_OUT), {Transparency = 1}):Play()
-TweenService:Create(BackgroundFrame, TweenInfo.new(DURATION_FADE_OUT), {BackgroundTransparency = 1}):Play()
-
-if BlurEffect then
-    TweenService:Create(BlurEffect, TweenInfo.new(DURATION_FADE_OUT), {Size = 0}):Play()
-end
-
-wait(DURATION_FADE_OUT + 0.5) -- Garante que tudo sumiu
-
--- Limpa a Splash Screen
-SplashGui:Destroy()
-if BlurEffect then BlurEffect:Destroy() end
-
--- // FIM DA SPLASH SCREEN \\ --
-
--- AQUI DEPOIS DESTA LINHA VOCÊ CONTINUA COM O SEU CÓDIGO NORMAL DA WINDUI E DO SCRIPT.
--- A Splash Screen já terminou de aparecer e sumir.
-
-
 if not game:IsLoaded() then
     repeat task.wait() until game:IsLoaded()
 end
@@ -259,34 +161,6 @@ local Tabs = {
         Desc = "Server Section"
     })
 };
-
-Tabs.InfoTab:Section({ Title = "— Dusk Hub Credits —" })
-
--- O Banner é o jeito 100% oficial da WindUI mostrar logos grandes
-Tabs.InfoTab:Paragraph({
-    Title = "Obrigado por usar o Dusk Hub!",
-    Desc = "Desenvolvedor: Dusk | Versão: 1.0",
-})
-
-Tabs.InfoTab:Section({ Title = "Redes Sociais" })
-
-Tabs.InfoTab:Button({
-    Title = "Copiar Link do Discord",
-    Desc = "Junte-se a meu servidor!",
-    Icon = "Moon"
-    Callback = function()
-        setclipboard("https://discord.gg/sS6C2eFrDg")
-        WindUI:Notify({
-            Title = "Dusk Hub",
-            Content = "Link copiado!",
-            Duration = 5
-        })
-    end
-})
-
--- Garante que o menu abra nesta aba
-Window:SelectTab(1);
-
 Window:SelectTab(1);
 _G.Settings = {
     Main = {
@@ -2581,6 +2455,25 @@ spawn(function()
         end);
     end
 end);
+
+- Dusk Hub Discord Section
+DuskDiscordParagraph = Tabs.InfoTab:Paragraph({
+    Title = "Discord Server",
+    Desc = "Link Discord Dusk Hub!",
+    TextXAlignment = "Left",
+    Buttons = {{
+        Title = "Copy Link Discord",
+        Callback = function()
+            setclipboard("https://discord.gg/sS6C2eFrDg");
+            WindUI:Notify({
+                Title = "Dusk Hub",
+                Content = "Discord Link Copied",
+                Icon = "bell",
+                Duration = 3
+            });
+        end
+    }}
+});
 
 LevelFarmSection = Tabs.MainTab:Section({
     Title = "Level Farm",
