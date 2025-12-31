@@ -40,12 +40,29 @@ local Window = WindUI:CreateWindow({
     },
 });
 Window:EditOpenButton({
-    Title = "open-Dusk Hub",
+    Title = "", 
     Icon = "moon",
-    CornerRadius = UDim.new(0, 6),
+    CornerRadius = UDim.new(1, 0), -- Círculo
     StrokeThickness = 2,
-    Color = ColorSequence.new(Color3.fromRGB(30, 30, 30), Color3.fromRGB(255, 255, 255)),
-    Draggable = true
+    Color = ColorSequence.new({
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(45, 0, 90)),   -- Roxo Escuro
+        ColorSequenceKeypoint.new(0.5, Color3.fromRGB(15, 15, 15)), -- Preto
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(200, 200, 200)) -- Branco/Cinza
+    }),
+    Draggable = true,
+    Keybind = Window.Keybind
+
+local coreGui = game:GetService("CoreGui")
+local openButton = coreGui:FindFirstChild("WindUI_OpenButton", true) -- Procura o botão da Wind
+
+if openButton then
+    local iconImage = openButton:FindFirstChildWhichIsA("ImageLabel", true)
+    if iconImage then
+        iconImage.Image = "rbxassetid://91478007929502" -- Coloque o seu ID aqui
+        iconImage.ImageColor3 = Color3.fromRGB(255, 255, 255) -- Mantém a cor original da foto
+    end
+end
+        
 });
 local Tabs = {
     InfoTab = Window:Tab({
